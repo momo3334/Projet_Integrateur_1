@@ -30,6 +30,10 @@ main {
     border-radius: 20px;
 }
 
+button {
+    border: none;
+}
+
 .margin_auto {
     margin: auto;
 }
@@ -68,22 +72,23 @@ main {
     transition: all 0.3s;
 }
 
-.button_class{
+.button_class {
     background-color: var(--belize_hole);
     vertical-align: middle;
 }
 
-.button_class:hover{
+.button_class:hover {
     background-color: var(--nephritis);
     cursor: pointer;
 }
 
-.button_class:hover , .button_class:not(:hover){
+.button_class:hover, .button_class:not(:hover) {
     transition: all 0.3s;
 }
 
-#div_connection {
+#div_connection, #div_traitement {
     margin: 10px;
+    margin-top: 50px;
     align-items: center;
     align-content: center;
 }
@@ -92,5 +97,16 @@ main {
     color: white;
     border-radius: 50px;
     padding: 4%;
-    border:none;
+}
+
+#button_tryagain {
+    font-size: 25px;
+    color: white;
+    border-radius: 50px;
+    width: 100px;
+    padding: 1%;
+}
+
+#div_tryagain{
+    flex-direction: column;
 }
