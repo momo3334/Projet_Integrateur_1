@@ -20,7 +20,7 @@ body {
     background-color: var(--silver);
 }
 
-.themeSombre body {
+body.themeSombre {
     background-color: var(--midnightblue);
 }
 
