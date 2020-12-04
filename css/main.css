@@ -68,6 +68,20 @@ main {
     transition: all 0.3s;
 }
 
+.button_class{
+    background-color: var(--belize_hole);
+    vertical-align: middle;
+}
+
+.button_class:hover{
+    background-color: var(--nephritis);
+    cursor: pointer;
+}
+
+.button_class:hover , .button_class:not(:hover){
+    transition: all 0.3s;
+}
+
 #div_connection {
     margin: 10px;
     align-items: center;
@@ -75,7 +89,8 @@ main {
 }
 
 #button_connection {
-    background-color: var(--belize_hole);
-    vertical-align: middle;
     color: white;
+    border-radius: 50px;
+    padding: 4%;
+    border:none;
 }

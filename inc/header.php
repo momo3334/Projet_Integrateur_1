@@ -14,12 +14,12 @@
         <header>
             <nav class="containerMenu justify_center">
                 <ul class="flex justify_center">
-                    <li class="menu flex"><a href="accueil.php">Accueil</a></li>
-                    <li class="menu flex"><a href="projets.php">Projets</a></li>
-                    <li class="menu flex"><a href="calendrier.php">Calendrier</a></li>
-                    <li class="menu flex"><a href="filtres.php">Filtrer</a></li>
-                    <li class="menu flex"><a href="profil_data.php"> Mes infos</a></li>
-                    <li class="menu flex"><a href="connection.php">Connection</a></li>
+                    <li class="menu flex button_class"><a href="accueil.php">Accueil</a></li>
+                    <li class="menu flex button_class"><a href="projets.php">Projets</a></li>
+                    <li class="menu flex button_class"><a href="calendrier.php">Calendrier</a></li>
+                    <li class="menu flex button_class"><a href="filtres.php">Filtrer</a></li>
+                    <li class="menu flex button_class"><a href="profil_data.php"> Mes infos</a></li>
+                    <li class="menu flex button_class"><a href="connection.php">Connection</a></li>
                 </ul>
             </nav>
         </header>
