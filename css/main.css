@@ -8,14 +8,20 @@
     --midnightblue: #2c3e50;
     --silver: #bdc3c7;
     --asbestos: #7f8c8d;
+    --concrete: #95a5a6;
     --peter_river: #5db1ea;
     --belize_hole: #2980b9;
     --nephritis: #27ae60;
+    --alizarin: #e74c3c;
     --pomegranate: #c0392b;
 }
 
 body {
     background-color: var(--silver);
+}
+
+.themeSombre body {
+    background-color: var(--midnightblue);
 }
 
 header {
@@ -28,6 +34,10 @@ main {
     width: 980px;
     background-color: white;
     border-radius: 20px;
+}
+
+.themeSombre main{
+    background-color: var(--concrete);
 }
 
 button {
@@ -55,6 +65,10 @@ button {
     border-radius: 50px;
 }
 
+.themeSombre .menu {
+    background-color: var(--alizarin);
+}
+
 .menu a {
     text-align: center;
     color: white;
@@ -63,9 +77,17 @@ button {
     text-decoration: none;
 }
 
+.themeSombre .menu a {
+    color: black;
+}
+
 .menu:hover {
     background-color: var(--nephritis);
     transition: all 0.3s;
+}
+
+.themeSombre .menu:hover {
+    background-color: var(--pomegranate);
 }
 
 .menu:not(:hover) {
