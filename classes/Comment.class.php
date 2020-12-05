@@ -13,6 +13,24 @@ class Comment
         $this->_idEmploye = $p_idEmploye;
     }
 
+	/****** Display ******/
+    public function PrintSelf()
+    {
+   		// Wrapper
+   		echo '<div class="div_comment">';
+	
+   		// Comment
+   		echo '<div class="div_comment_text">';
+   		echo $this->get_comment();
+		echo '</div>';
+		   
+   		//Employe
+   		echo '<div class="div_comment_employe">';
+   		echo 'id Employe: ' . $this->get_idEmploye() . '.';
+   		echo '</div>';
+	
+   		echo '</div>';
+    }
 
     /****** Getters and Setters ******/
 	/**

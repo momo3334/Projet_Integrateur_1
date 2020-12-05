@@ -28,9 +28,18 @@ class Project
     /****** Display ******/
     public function PrintSelf()
     {
+        // Container
         echo "<button class='div_project_container'>" . $this->get_title() . "</button>";
-        echo '<div class="div_project">';
-
+            //Wrapper
+            echo '<div class="div_project">';
+                // Task Container
+                if (!empty($this->get_tasks())) {
+                    echo '<div class="div_task_container">';
+                    foreach ($this->get_tasks() as $t) {
+                        $t->PrintSelf();
+                    }
+                }
+            echo '</div>';
         echo '</div>';
     }
 

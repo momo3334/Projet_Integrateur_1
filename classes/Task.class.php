@@ -21,7 +21,9 @@ class Task
 
         $this->_comments = array();
         $comments = DbService::executeProcedure("GetTaskComments", array($this->_id), true, true, false);
-        foreach ($comments as $c) {
+
+        if (!empty($comments)) {
+            foreach ($comments as $c) {
             $newComment = new Comment (
                                  $c["id_commentaire"], 
                                  $c["commentaire"], 
@@ -29,10 +31,46 @@ class Task
                                  $c["id_employe"]
                                 );
             array_push($this->_comments, $newComment);
+            }
         }
     }
 
+    /****** Display ******/
+    public function PrintSelf()
+    {
+        // Wrapper
+        echo '<div class="div_task">';
 
+        // Title
+        echo '<div class="div_task_title">';
+        echo $this->get_title();
+        echo '</div>';
+
+        // Description
+        echo '<div class="div_task_description">';
+        echo $this->get_description();
+        echo '</div>';
+
+        // DueDate
+        echo '<div class="div_task_dueDate">';
+        echo $this->get_dueDate();
+        echo '</div>';
+
+        //Employe
+        echo '<div class="div_task_Employe">';
+        echo 'id Employe: ' . $this->get_idEmploye() . '.';
+        echo '</div>';
+
+        //Comments
+        if (!empty($this->getComments())) {
+            foreach ($this->getComments() as $c) {
+                echo '<div class="div_comment_container">';
+                $c->PrintSelf();
+                echo '</div>';
+            }
+        }
+        echo '</div>';
+    }
 
     /****** Getters and Setters ******/
 	/**
