@@ -15,7 +15,7 @@
         <header>
             <nav class="containerMenu justify_center">
                 <ul class="flex justify_center">
-                    <li class="menu flex button_class"><a href="accueil.php">Accueil</a></li>
+                    <li class="menu flex button_class"><a href="index.php">Accueil</a></li>
                     <li class="menu flex button_class"><a href="projets.php">Projets</a></li>
                     <li class="menu flex button_class"><a href="calendrier.php">Calendrier</a></li>
                     <li class="menu flex button_class"><a href="filtres.php">Filtrer</a></li>
