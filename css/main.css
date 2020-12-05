@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
 }
-
+/* General */
 :root {
     --midnightblue: #2c3e50;
     --silver: #bdc3c7;
@@ -29,6 +29,13 @@ header {
     border-radius: 20px 20px 0px 0px;
 }
 
+footer {
+    background-color: var(--asbestos);
+    position: absolute;
+    width: 980px;
+    bottom: 0;
+}
+
 main {
     min-height: 100vh;
     width: 980px;
@@ -40,22 +47,8 @@ main {
     background-color: var(--concrete);
 }
 
-button {
-    border: none;
-}
 
-.margin_auto {
-    margin: auto;
-}
-
-.flex {
-    display: flex;
-}
-
-.justify_center {
-    justify-content: center;
-}
-
+/* Menu */
 .menu {
     background-color: var(--belize_hole);
     width: 15%;
@@ -94,6 +87,12 @@ button {
     transition: all 0.3s;
 }
 
+
+/* Boutton */
+button {
+    border: none;
+}
+
 .button_class {
     background-color: var(--belize_hole);
     vertical-align: middle;
@@ -106,13 +105,6 @@ button {
 
 .button_class:hover, .button_class:not(:hover) {
     transition: all 0.3s;
-}
-
-#div_connection, #div_traitement {
-    margin: 10px;
-    margin-top: 50px;
-    align-items: center;
-    align-content: center;
 }
 
 #button_connection {
@@ -129,6 +121,72 @@ button {
     padding: 1%;
 }
 
-#div_tryagain{
+
+/* Page Connexion */
+#div_connection, #div_traitement {
+    margin: 10px;
+    margin-top: 50px;
+    align-items: center;
+    align-content: center;
+}
+
+#div_tryagain {
     flex-direction: column;
+}
+
+
+/* Page Projets */
+.div_project_container {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.div_project {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.active, .div_project_container:hover {
+  background-color: #ccc;
+}
+
+.div_project_container:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+
+
+
+
+/* Utilitaires */
+
+.margin_auto {
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify_center {
+    justify-content: center;
 }

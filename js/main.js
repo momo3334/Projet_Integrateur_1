@@ -1,6 +1,23 @@
 checkCookie();
 document.getElementById("styleTheme").addEventListener("click", setStyle);
 
+
+var acc = document.getElementsByClassName("div_project_container");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
 function setStyle(){
     let styleType = document.getElementById("styleTheme");
     let styleBody = document.getElementsByTagName("body")[0];

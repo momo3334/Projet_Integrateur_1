@@ -1,8 +1,8 @@
-</main>
 <footer>
     <input id="styleTheme" type="button" value="Sombre"/>
       <p>Copyright ProJect</p>
-    </footer>
+</footer>
+</main>
 </body>
 
 </html>
