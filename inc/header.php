@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+function loadClass($class)
+{
+ require './classes/' . $class . '.class.php';
+}
+
+spl_autoload_register('loadClass');
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +29,14 @@
                     <li class="menu flex button_class"><a href="filtres.php">Filtrer</a></li>
                     <li class="menu flex button_class"><a href="profil_data.php"> Mes infos</a></li>
                     <?php
-                    if (isset($_SESSION["prenom"]))
-                        echo '<li class="menu flex button_class"><a href="traitement.php?deconnect=true">Déconnection</a></li>';
+                    if (isset($_SESSION["client"]))
+                    {
+                        echo '<li class="menu flex button_class"><a href="traitement.php?deconnect=true">Déconnexion</a></li>';
+                    }
                     else
-                        echo '<li class="menu flex button_class"><a href="connection.php">Connection</a></li>';
+                    {
+                        echo '<li class="menu flex button_class"><a href="connection.php">Connexion</a></li>';
+                    }
                     ?>
                 </ul>
             </nav>

@@ -1,16 +1,16 @@
 <?php
 include "inc/header.php";
-include "class/client.php";
 ?>
 
 <div class="flex justify_center" id="div_traitement">
     <?php
     if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'login') {
-        $_SESSION["client"] = new Client($_REQUEST['courriel_user'], $_REQUEST['mdp_user']);
+        $courriel = $_REQUEST['courriel_user'];
+        $mdp = $_REQUEST['mdp_user'];
 
-        if ($_SESSION["client"]->check_username()) {
-            $_SESSION["prenom"] = $_SESSION["client"]->get_prenom();
-            echo '<h1>Bonjour ' . $_SESSION["prenom"] . '!</h1>';
+        if (Client::check_username($courriel, $mdp)) {
+            $_SESSION["client"] = Client::get_ClientFromDb($courriel);
+            echo '<h1>Bonjour ' . $_SESSION["client"]->get_prenom() . '!</h1>';
         } else {
             echo '
             <div class="flex justify_center" id="div_tryagain">
@@ -34,7 +34,7 @@ include "class/client.php";
             </div>';
         }
     } else if (isset($_REQUEST['deconnect'])) {
-        echo "<h1>Au revoir " . $_SESSION["prenom"] . "!</h1>";
+        echo "<h1>Au revoir " . $_SESSION["client"]->get_prenom() . "!</h1>";
         session_destroy();
     }
 
