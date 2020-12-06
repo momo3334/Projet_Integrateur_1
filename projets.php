@@ -1,13 +1,21 @@
 <?php 
 include "inc/header.php";
 $employeProjects = $_SESSION["client"]->getClientProjects();
-?>    
+?>
+
+<div class="div_project_list_wrapper">
 <?php
+    // Container
+    echo '<div class="div_project_container">';
     foreach ($employeProjects as $p)
     {
         $p->PrintSelf();
     }
+    echo '</div>';
 ?>
+
+</div>
+
 
 <button class="div_project_container">To Customize Display</button>
 <div class="div_project">

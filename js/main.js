@@ -2,7 +2,7 @@ checkCookie();
 document.getElementById("styleTheme").addEventListener("click", setStyle);
 
 
-var acc = document.getElementsByClassName("div_project_container");
+var acc = document.getElementsByClassName("div_project_accordeon");
 var i;
 
 for (i = 0; i < acc.length; i++) {

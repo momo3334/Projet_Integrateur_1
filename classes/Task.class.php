@@ -48,16 +48,16 @@ class Task
 
         // Description
         echo '<div class="div_task_description">';
-        echo $this->get_description();
+        echo '<p>Description : ' . $this->get_description(). '</p>';
         echo '</div>';
 
         // DueDate
-        echo '<div class="div_task_dueDate">';
-        echo $this->get_dueDate();
+        echo '<div class="div_task_due_date">';
+        echo '<p>Échéance: ' . $this->get_dueDate() . '</p>';
         echo '</div>';
 
         //Employe
-        echo '<div class="div_task_Employe">';
+        echo '<div class="div_task_employe">';
         echo 'id Employe: ' . $this->get_idEmploye() . '.';
         echo '</div>';
 
@@ -65,6 +65,7 @@ class Task
         if (!empty($this->getComments())) {
             foreach ($this->getComments() as $c) {
                 echo '<div class="div_comment_container">';
+                echo '<p>Commentaires</p>';
                 $c->PrintSelf();
                 echo '</div>';
             }

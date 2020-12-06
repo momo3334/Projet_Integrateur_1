@@ -28,8 +28,8 @@ class Project
     /****** Display ******/
     public function PrintSelf()
     {
-        // Container
-        echo "<button class='div_project_container'>" . $this->get_title() . "</button>";
+        // Accordeon
+        echo "<button class='div_project_accordeon'>" . $this->get_title() . "</button>";
             //Wrapper
             echo '<div class="div_project">';
                 // Task Container
