@@ -17,7 +17,8 @@ class Project
                                  $t["titre"], 
                                  $t["description"], 
                                  $t["echeance"], 
-                                 $t["id_employe"], 
+                                 $t["id_employe"],
+                                 $t["prenom"] . ' ' . $t["nom"],
                                  $t["id_priorite"], 
                                  $this->_id
                                 );
@@ -32,14 +33,16 @@ class Project
         echo "<button class='div_project_accordeon'>" . $this->get_title() . "</button>";
             //Wrapper
             echo '<div class="div_project">';
-                // Task Container
                 if (!empty($this->get_tasks())) {
+                    // Task Container
                     echo '<div class="div_task_container">';
+                    // Task Container Title
+                    echo '<div class="div_task_container_title">Tâches</div>';
                     foreach ($this->get_tasks() as $t) {
                         $t->PrintSelf();
                     }
+                    echo '</div>';
                 }
-            echo '</div>';
         echo '</div>';
     }
 

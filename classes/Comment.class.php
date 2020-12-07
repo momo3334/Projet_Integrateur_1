@@ -4,31 +4,30 @@ class Comment
     private $_id;
     private $_comment;
     private $_idTask; 
-    private $_idEmploye; 
+    private $_employeName; 
 
-    public function __construct($p_id, $p_comment, $p_idTask, $p_idEmploye) {
+    public function __construct($p_id, $p_comment, $p_idTask, $p_employeName) {
         $this->_id = $p_id;
         $this->_comment = $p_comment;
         $this->_idTask = $p_idTask;
-        $this->_idEmploye = $p_idEmploye;
+        $this->_employeName = $p_employeName;
     }
 
 	/****** Display ******/
     public function PrintSelf()
     {
    		// Wrapper
-   		echo '<div class="div_comment">';
-	
-   		// Comment
+   		echo '<div class="flex div_comment">';
+		   
+		//Employe
+		echo '<div class="div_comment_employe">';
+   		echo '<i>' . $this->get_employeName() . '</i> :';
+   		echo '</div>';
+		// Comment
    		echo '<div class="div_comment_text">';
    		echo $this->get_comment();
 		echo '</div>';
-		   
-   		//Employe
-   		echo '<div class="div_comment_employe">';
-   		echo 'id Employe: ' . $this->get_idEmploye() . '.';
-   		echo '</div>';
-	
+
    		echo '</div>';
     }
 
@@ -66,11 +65,11 @@ class Comment
 	/**
 	 * Get the value of _idEmploye
 	 */
-	public function get_idEmploye() { return $this->_idEmploye; }
+	public function get_employeName() { return $this->_employeName; }
 
 	/**
 	 * Set the value of _idEmploye
 	 */
-	public function set_idEmploye($_idEmploye){ $this->_idEmploye = $_idEmploye; return $this; }
+	public function set_employeName($_employeName){ $this->_employeName = $_employeName; return $this; }
 }
 ?>

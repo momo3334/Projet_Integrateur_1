@@ -6,16 +6,18 @@ class Task
     private $_description;
     private $_dueDate;
     private $_idEmploye;
+    private $_employeName;
     private $_idPriority;
     private $_idProject;
     private $_comments; 
 
-    public function __construct($p_id, $p_title, $p_description, $p_dueDate, $p_idEmploye, $p_idPriority, $p_idProject) {
+    public function __construct($p_id, $p_title, $p_description, $p_dueDate, $p_idEmploye, $p_employeName, $p_idPriority, $p_idProject) {
         $this->_id = $p_id;
         $this->_title = $p_title;
         $this->_description = $p_description;
         $this->_dueDate = $p_dueDate;
         $this->_idEmploye = $p_idEmploye;
+        $this->_employeName = $p_employeName;
         $this->_idPriority = $p_idPriority;
         $this->_idProject = $p_idProject;
 
@@ -28,7 +30,7 @@ class Task
                                  $c["id_commentaire"], 
                                  $c["commentaire"], 
                                  $c["id_tache"], 
-                                 $c["id_employe"]
+                                 $c["prenom"] . ' ' . $c["nom"],
                                 );
             array_push($this->_comments, $newComment);
             }
@@ -38,7 +40,13 @@ class Task
     /****** Display ******/
     public function PrintSelf()
     {
-        // Wrapper
+        // Container
+        echo '<div class="div_task_wrapper">';
+        
+        //Button
+        echo "<button class='flex div_list_accordeon'><span class='accordeon_text'>" . $this->get_title() . '</span><span class="accordeon_dueDate"><b>Échéance: </b>' . $this->get_dueDate() . '</span>' . "</button>";
+
+        // Container
         echo '<div class="div_task">';
 
         // Title
@@ -48,28 +56,31 @@ class Task
 
         // Description
         echo '<div class="div_task_description">';
-        echo '<p>Description : ' . $this->get_description(). '</p>';
+        echo '<p><b>Description</b> : ' . $this->get_description(). '</p>';
         echo '</div>';
 
         // DueDate
         echo '<div class="div_task_due_date">';
-        echo '<p>Échéance: ' . $this->get_dueDate() . '</p>';
+        echo '<p><b>Échéance</b> : ' . $this->get_dueDate() . '</p>';
         echo '</div>';
 
         //Employe
         echo '<div class="div_task_employe">';
-        echo 'id Employe: ' . $this->get_idEmploye() . '.';
+        echo '<b>Assignée à</b> : ' . $this->get_employeName() . '.';
         echo '</div>';
 
         //Comments
         if (!empty($this->getComments())) {
+            echo '<div class="div_comment_container">';
+            echo '<div class="div_comment_container_title">Commentaires</div>';
             foreach ($this->getComments() as $c) {
-                echo '<div class="div_comment_container">';
-                echo '<p>Commentaires</p>';
                 $c->PrintSelf();
-                echo '</div>';
             }
+            echo '</div>';
+
         }
+        echo '</div>';
+        
         echo '</div>';
     }
 
@@ -125,6 +136,16 @@ class Task
 	public function set_idEmploye($_idEmploye){ $this->_idEmploye = $_idEmploye; return $this; }
 
 	/**
+	 * Get the value of _employeName
+	 */
+	public function get_employeName() { return $this->_employeName; }
+
+	/**
+	 * Set the value of _employeName
+	 */
+    public function set_employeName($_employeName){ $this->_employeName = $_employeName; return $this; }
+    
+	/**
 	 * Get the value of _idPriority
 	 */
 	public function get_idPriority() { return $this->_idPriority; }
@@ -174,7 +195,6 @@ class Task
     {
         array_push($this->_comments, $_comment);
     }
+
 }
-
-
 ?>

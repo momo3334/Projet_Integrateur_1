@@ -18,6 +18,40 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+var acc_task = document.getElementsByClassName("div_list_accordeon");
+var i;
+
+for (i = 0; i < acc_task.length; i++) {
+  acc_task[i].addEventListener("click", function () {
+    var panel = this.nextElementSibling;
+    var parentHeightToRemove = panel.scrollHeight;
+    this.classList.toggle("active");
+    
+    if (panel.style.maxHeight) {
+
+      //Resetting parent panel height
+      var parentProjectPanel = findAncestor(this, "div_project");
+      var parentPanelHeight = parentProjectPanel.scrollHeight;
+      parentProjectPanel.style.maxHeight = parentPanelHeight - parentHeightToRemove + "px";
+
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+
+      //Setting parent panel height
+      var parentProjectPanel = findAncestor(this, "div_project");
+      var parentPanelHeight = panel.scrollHeight + parentProjectPanel.scrollHeight;
+      parentProjectPanel.style.height = parentPanelHeight + "px";
+      parentProjectPanel.style.maxHeight = parentPanelHeight + "px";
+    }
+  });
+}
+
+function findAncestor(el, cls) {
+  while ((el = el.parentElement) && !el.classList.contains(cls));
+  return el;
+}
+
 function setStyle(){
     let styleType = document.getElementById("styleTheme");
     let styleBody = document.getElementsByTagName("body")[0];
