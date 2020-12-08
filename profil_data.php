@@ -19,7 +19,7 @@
             <ul>';
             $bdd = DbService::connectToDb();
 
-            $sql_commentaires = "SELECT * FROM tbl_commentaire WHERE id_employe = (SELECT id_employe FROM tbl_employe WHERE id_employe = $_SESSION["client"]->get_id())"
+            $sql_commentaires = "SELECT * FROM tbl_commentaire WHERE id_employe = (SELECT id_employe FROM tbl_employe WHERE id_employe = " .  $_SESSION["client"]->get_id(). ")";
             $result_commentaires = $bdd->query($sql_commentaires);
             $numCommentaire = 1;
            
@@ -27,7 +27,7 @@
                 echo 
                 '<li>
                     Commentaire ' . $numCommentaire . ' : ' . $commentaire["commentaire"] . '
-                </li>'
+                </li>';
 
                 $numCommentaire++;
             }
