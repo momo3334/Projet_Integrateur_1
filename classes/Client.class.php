@@ -42,6 +42,18 @@ class Client
 		return $projectsObj;
 	}
 
+	public function getAllProjects()
+	{
+		$projects = DbService::executeProcedure("GetProjects", null, true, true, false);
+		if (count($projects) > 0) {
+			$projectsObj = array();
+			foreach ($projects as $p) {
+				array_push($projectsObj, new Project($p["id_projet"],$p["titre"]));
+			} 
+		}
+		return $projectsObj;
+	}
+
 	public function get_name()
 	{
 		return $this->_name;

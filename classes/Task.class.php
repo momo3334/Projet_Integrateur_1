@@ -64,6 +64,12 @@ class Task
         echo '<p><b>Échéance</b> : ' . $this->get_dueDate() . '</p>';
         echo '</div>';
 
+        // DueDate
+        echo '<div class="div_task_due_date">';
+        echo '<p><b>Priorité</b> : ' . $this->get_idPriority() . '</p>';
+        echo '</div>';
+
+
         //Employe
         echo '<div class="div_task_employe">';
         echo '<b>Assignée à</b> : ' . $this->get_employeName() . '.';

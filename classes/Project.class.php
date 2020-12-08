@@ -46,6 +46,30 @@ class Project
         echo '</div>';
     }
 
+    public function sortTaskByDates(bool $asc = true)
+    {
+        $tasks = &$this->_tasks;
+        if ($asc) {
+            usort($tasks, "dateCompareAsc");
+
+        } else {
+            usort($tasks, "dateCompareDesc");
+        }
+        return null;
+    }
+
+    public function sortTaskByPriority(bool $asc = true)
+    {
+        $tasks = &$this->_tasks;
+        if ($asc) {
+            usort($tasks, "priorityCompareAsc");
+
+        } else {
+            usort($tasks, "priorityCompareDesc");
+        }
+        return null;
+    }
+
     /****** Getters and Setters ******/
 	/**
 	 * Get the value of _id

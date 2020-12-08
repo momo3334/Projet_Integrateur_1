@@ -52,6 +52,27 @@ function findAncestor(el, cls) {
   return el;
 }
 
+
+window.onload = function() {
+  var filterCrit = document.getElementById("filterCrit");
+  var filterSel = document.getElementById("filterOrder");
+
+  if (filterCrit != null){
+    filterCrit.onchange = function () {
+      //empty Chapters- and Topics- dropdowns
+      filterSel.length = 1;
+      //display correct values
+      if (this.value == 2) {
+        filterSel.options[0] = new Option("Tous", "A");
+        filterSel.options[1] = new Option("Vous", "D");
+      } else {
+        filterSel.options[0] = new Option("Croissant", "A");
+        filterSel.options[1] = new Option("Décroissant", "D");
+      }
+    };
+  }
+}
+
 function setStyle(){
     let styleType = document.getElementById("styleTheme");
     let styleBody = document.getElementsByTagName("body")[0];
