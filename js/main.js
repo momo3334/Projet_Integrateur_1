@@ -77,13 +77,13 @@ function setStyle(){
     let styleType = document.getElementById("styleTheme");
     let styleBody = document.getElementsByTagName("body")[0];
 
-    if(styleType.value == "Standart"){
+    if(styleType.value == "Standard"){
     document.cookie="theme=styleStandart";
     styleType.value = "Sombre";
     }
     else {
     document.cookie="theme=styleSombre";
-    styleType.value = "Standart";
+    styleType.value = "Standard";
     }
 
     styleBody.classList.toggle('themeSombre');
@@ -95,7 +95,7 @@ function checkCookie() {
     var theme = getCookie("theme");
     if (theme == "styleSombre") {
         styleBody.classList.add('themeSombre');
-        styleType.value = "Standart";
+        styleType.value = "Standard";
 
     } 
 }
