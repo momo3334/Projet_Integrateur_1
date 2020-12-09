@@ -37,7 +37,7 @@ class Client
 			$projectsObj = array();
 			foreach ($projects as $p) {
 				array_push($projectsObj, new Project($p["id_projet"],$p["titre"]));
-			}
+			} 
 		}
 		return $projectsObj;
 	}

@@ -3,7 +3,7 @@ class DbService
 {
     public static function connectToDb()
     {
-$bdd = new PDO('mysql:host=localhost;dbname=projzqce_todoist;charset=utf8', 'projzqce_jeromelemay', 'projecttodoist');
+        $bdd = new PDO('mysql:host=localhost;dbname=projzqce_todoist;charset=utf8', 'projzqce_jeromelemay', 'projecttodoist');
 
         if (isset($bdd)) {
             return $bdd;

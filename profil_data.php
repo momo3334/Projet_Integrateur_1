@@ -6,13 +6,13 @@
         <div class="flex justify_center">
             <ul>
                 <li class="info_Client">
-                    Prénom : ' . $_SESSION["client"]->get_prenom() . '
+                    Prénom: ' . $_SESSION["client"]->get_prenom() . '
                 </li>
                 <li class="info_Client">
-                    Nom :' . $_SESSION["client"]->get_name() . '
+                    Nom: ' . $_SESSION["client"]->get_name() . '
                 </li>
                 <li class="info_Client">
-                    Courriel :' . $_SESSION["client"]->get_courriel() . '
+                    Courriel: ' . $_SESSION["client"]->get_courriel() . '
                 </li>
             </ul>
         </div>
