@@ -1,9 +1,13 @@
 <?php
 include "inc/header.php"; ?>
-<div id="div_calendrier">
+<div class="flex justify_center">
     <?php
     if (isset($_SESSION["client"])) {
-
+    ?>
+    <div class="div_calendrier flex justify_center">
+        <?php find_Date(); ?>
+    </div>
+<?php
     } else {
         echo '
     <div class="flex justify_center" id="div_tryagain">
@@ -26,11 +30,24 @@ include "inc/header.php"; ?>
         </div>
     </div>';
     }
-    ?>
+?>
 </div>
-<?php 
-    function name(){
-        $bdd = DbService::connectToDb();
+<?php
+function find_Date()
+{
+    $bdd = DbService::connectToDb();
+    $sql = "SELECT * FROM tbl_tache WHERE id_employe = (SELECT id_employe FROM tbl_employe WHERE id_employe = " .  $_SESSION["client"]->get_id() . ") ORDER BY(echeance)";
+    $result = $bdd->query($sql);
+
+    while ($row = $result->fetch()) {
+        echo 'Date d\'échéance : ' . $row["echeance"];
+        echo '<br>';
+        echo 'Tâche : ' . $row["titre"];
+        echo '<br>';
+        echo 'Description : ' . $row["description"];
+        echo '<br><br>';
     }
+    $bdd = null;
+}
 ?>
 <?php include "inc/footer.php"; ?>

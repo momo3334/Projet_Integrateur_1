@@ -353,6 +353,15 @@ div.div_comment_text{
     padding: 5px;
 }
 
+/*Page Calendrier*/
+.div_calendrier{
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(0,140,0,0.1);
+    border-radius: 20px;
+    padding: 5%;
+}
+
 /* Utilitaires */
 
 .margin_auto {
