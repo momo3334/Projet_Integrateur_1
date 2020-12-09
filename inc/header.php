@@ -24,7 +24,7 @@ session_start();
     <main class="margin_auto">
         <header>
             <nav class="containerMenu justify_center">
-                <ul class="flex justify_center">
+                <ul class="containerUL flex justify_center">
                     <li class="menu flex button_class"><a href="index.php">Accueil</a></li>
                     <li class="menu flex button_class"><a href="projets.php">Projets</a></li>
                     <li class="menu flex button_class"><a href="calendrier.php">Calendrier</a></li>

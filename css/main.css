@@ -3,9 +3,11 @@
     padding: 0;
     margin: 0;
 }
+
 /* Fonts */
 
 /* General */
+
 :root {
     --midnightblue: #2c3e50;
     --silver: #bdc3c7;
@@ -18,10 +20,9 @@
     --pomegranate: #c0392b;
 }
 
-body, .div_list_accordeon{
+body, .div_list_accordeon {
     background-color: var(--silver);
     /* font-family: 'Sansita Swashed', cursive; */
-    
     font-family: 'Nunito', sans-serif;
 }
 
@@ -36,13 +37,13 @@ header {
 
 footer {
     background-color: var(--asbestos);
-    width: 980px;
+    width: 74%;
     border-radius: 0px 0px 20px 20px;
 }
 
 main {
     min-height: 100vh;
-    width: 980px;
+    width: 74%;
     background-color: white;
     border-radius: 20px 20px 0px 0px;
 }
@@ -51,12 +52,12 @@ main {
     list-style: none;
 }
 
-.themeSombre main{
+.themeSombre main {
     background-color: var(--concrete);
 }
 
-
 /* Menu */
+
 .menu {
     background-color: var(--belize_hole);
     width: 15%;
@@ -95,8 +96,8 @@ main {
     transition: all 0.3s;
 }
 
-
 /* Boutton */
+
 button {
     border: none;
 }
@@ -123,10 +124,10 @@ button {
     transition: all 0.3s;
 }
 
-.changement_theme{
-   border: none;
-   border-radius: 20px;
-   padding: 5px;
+.changement_theme {
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 #button_connection {
@@ -152,6 +153,7 @@ button {
 }
 
 /* Page Connexion */
+
 #div_connection, #div_traitement {
     margin: 10px;
     margin-top: 50px;
@@ -163,12 +165,11 @@ button {
     flex-direction: column;
 }
 
-
 /* Page Projets */
 
-
 /*div accordeon*/
-.div_project_list_wrapper{
+
+.div_project_list_wrapper {
     /*background-color: rgba(0,0,0,0.03);*/
 }
 
@@ -179,102 +180,106 @@ button {
 }
 
 .div_project_accordeon {
-  background-color: var(--belize_hole);
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  margin-top: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  transition: 0.4s ease-in-out;
-  transition: border-radius 0.4s 0.3s;
+    background-color: var(--belize_hole);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    margin-top: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    transition: border-radius 0.4s 0.3s;
 }
 
 .div_project {
-  padding: 0px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
+    padding: 0px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
 }
 
-.div_project_accordeon.active{
+.div_project_accordeon.active {
     margin-bottom: 0;
     border-radius: 25px 25px 0 0;
     transition: border-radius 0s;
 }
 
 .active, .div_project_accordeon:hover, .div_list_accordeon:hover {
-  background-color: var(--nephritis)!important;
-  width: 100%;
-  height: 100%;
+    background-color: var(--nephritis)!important;
+    width: 100%;
+    height: 100%;
 }
 
 .div_project_accordeon:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
 }
 
 .active:after {
-  content: "\2796" !important; /* Unicode character for "minus" sign (-) */
+    content: "\2796" !important;
+    /* Unicode character for "minus" sign (-) */
 }
 
 /*div project*/
+
 .div_project {
     background-color: transparent;
 }
 
-.div_list_accordeon{
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: solid 1px var(--silver);
-  border-radius: 4px;
-  outline: none;
-  transition: 0.4s ease-in-out;
-  transition: border-radius 0.4s 0.3s;
+.div_list_accordeon {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: solid 1px var(--silver);
+    border-radius: 4px;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    transition: border-radius 0.4s 0.3s;
 }
 
-.accordeon_text{
+.accordeon_text {
     flex-grow: 1;
 }
 
 .div_list_accordeon:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
 }
 
-.div_list_accordeon.active{
+.div_list_accordeon.active {
     margin-bottom: 0;
     border-radius: 4px 4px 0 0;
     transition: border-radius 0s;
     border-bottom: 0;
 }
 
-.div_task_container{
+.div_task_container {
     border: 1px solid var(--silver);
     border-top: none;
     border-radius: 0 0 5px 5px;
 }
 
-.div_task_container .div_task_container_title{
-    background-color: rgba(0,140,0,0.1);
+.div_task_container .div_task_container_title {
+    background-color: rgba(0, 140, 0, 0.1);
 }
 
-.div_task_container div{
+.div_task_container div {
     background-color: transparent;
     text-align: left;
     font-size: 16px;
@@ -282,7 +287,7 @@ button {
 }
 
 div.div_task {
-    position:relative;
+    position: relative;
     padding: 0;
     text-align: left;
     padding: 0px;
@@ -292,41 +297,41 @@ div.div_task {
     transition: max-height 0.2s ease-in-out;
 }
 
-.div_list_accordeon.active + .div_task{
+.div_list_accordeon.active+.div_task {
     border: solid 1px var(--silver);
     border-top: 0;
     border-radius: 0 0 4px 4px;
 }
 
-div.div_task_wrapper{
-    background-color:  rgba(0,0,0,0.03);
+div.div_task_wrapper {
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
-div.div_task_description, div.div_task_due_date, div.div_task_employe{
+div.div_task_description, div.div_task_due_date, div.div_task_employe {
     padding-left: 24px;
 }
 
-.div_task .div_task_title, .div_task .div_comment_container_title{
-    background-color: rgba(0,200,0,0.03);
+.div_task .div_task_title, .div_task .div_comment_container_title {
+    background-color: rgba(0, 200, 0, 0.03);
     font-weight: bold;
     padding: 18px;
 }
 
-div.div_task_due_date, div.div_task_description, div.div_task_employe{
+div.div_task_due_date, div.div_task_description, div.div_task_employe {
     font-size: 14px;
 }
 
-div.div_task_due_date b, div.div_task_description b, div.div_task_employe b{
+div.div_task_due_date b, div.div_task_description b, div.div_task_employe b {
     font-size: 16px;
     text-decoration: underline var(--silver);
     text-decoration-style: solid;
 }
 
-.div_comment_container{
+.div_comment_container {
     padding: 0!important;
 }
 
-.div_comment_container div{
+.div_comment_container div {
     background-color: transparent;
     text-align: left;
     font-weight: normal;
@@ -334,30 +339,31 @@ div.div_task_due_date b, div.div_task_description b, div.div_task_employe b{
     padding: 18px;
 }
 
-.div_comment_container{
+.div_comment_container {
     font-weight: bold;
 }
 
-div.div_comment{
+div.div_comment {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-div.div_comment_employe{
+div.div_comment_employe {
     padding: 5px;
 }
 
-div.div_comment_text{
+div.div_comment_text {
     font-size: 14px;
     align-self: center;
     padding: 5px;
 }
 
 /*Page Calendrier*/
-.div_calendrier{
+
+.div_calendrier {
     margin-top: 50px;
     text-align: center;
-    background-color: rgba(0,140,0,0.1);
+    background-color: rgba(0, 140, 0, 0.1);
     border-radius: 20px;
     padding: 5%;
 }
@@ -374,4 +380,18 @@ div.div_comment_text{
 
 .justify_center {
     justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .menu {
+        width: 100%;
+        margin: 0;
+        border-radius: 0px;
+    }
+    .containerUL {
+        flex-direction: column;
+    }
+    .menu a{
+        padding: 1%;
+    }
 }
