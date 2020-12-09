@@ -47,6 +47,10 @@ main {
     border-radius: 20px 20px 0px 0px;
 }
 
+.info_Client {
+    list-style: none;
+}
+
 .themeSombre main{
     background-color: var(--concrete);
 }
@@ -102,19 +106,41 @@ button {
     vertical-align: middle;
 }
 
+.themeSombre .button_class {
+    background-color: var(--alizarin);
+}
+
 .button_class:hover {
     background-color: var(--nephritis);
     cursor: pointer;
+}
+
+.themeSombre .button_class:hover {
+    background-color: var(--pomegranate);
 }
 
 .button_class:hover, .button_class:not(:hover) {
     transition: all 0.3s;
 }
 
+.changement_theme{
+   border: none;
+   border-radius: 20px;
+   padding: 5px;
+}
+
 #button_connection {
     color: white;
     border-radius: 50px;
     padding: 4%;
+}
+
+.themeSombre #button_connection {
+    background-color: var(--alizarin);
+}
+
+.themeSombre #button_connection:hover {
+    background-color: var(--pomegranate);
 }
 
 #button_tryagain {
@@ -124,7 +150,6 @@ button {
     width: 100px;
     padding: 1%;
 }
-
 
 /* Page Connexion */
 #div_connection, #div_traitement {

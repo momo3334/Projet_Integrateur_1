@@ -3,19 +3,23 @@
 <?php
     if(isset($_SESSION["client"])){
         echo '
-        <div>
+        <div class="flex justify_center">
             <ul>
-                <li>
+                <li class="info_Client">
                     Prénom : ' . $_SESSION["client"]->get_prenom() . '
                 </li>
-                <li>
+                <li class="info_Client">
                     Nom :' . $_SESSION["client"]->get_name() . '
                 </li>
-                <li>
+                <li class="info_Client">
                     Courriel :' . $_SESSION["client"]->get_courriel() . '
                 </li>
             </ul>
+        </div>
 
+        <br>
+
+        <div class="flex justify_center">
             <ul>';
             $bdd = DbService::connectToDb();
 
@@ -25,7 +29,7 @@
            
             while($commentaire = $result_commentaires->fetch()){
                 echo 
-                '<li>
+                '<li class="info_Client">
                     Commentaire ' . $numCommentaire . ' : ' . $commentaire["commentaire"] . '
                 </li>';
 
